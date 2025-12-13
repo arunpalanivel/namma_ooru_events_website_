@@ -22,7 +22,7 @@ const ImageMarquee = () => {
                transition={{
                   repeat: Infinity,
                   ease: "linear",
-                  duration: 20, // Adjust speed here
+                  duration: 5, // Adjust speed here
                }}
             >
                {/* Duplicate images for seamless loop */}
@@ -49,7 +49,7 @@ const ImageMarquee = () => {
                transition={{
                   repeat: Infinity,
                   ease: "linear",
-                  duration: 20,
+                  duration: 5,
                }}
             >
                {[...images, ...images, ...images].map((img, index) => (
