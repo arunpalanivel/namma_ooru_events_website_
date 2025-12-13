@@ -1,7 +1,6 @@
 
-import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, Youtube, MessageCircle, ArrowRight, Instagram } from 'lucide-react';
-import StarBorder from './StarBorder';
+import { Mail, MapPin, Phone, Youtube, MessageCircle, ArrowRight, Instagram, Clock } from 'lucide-react';
+import HoverButton from './HoverButton';
 
 export const Footer = () => {
   return (
@@ -54,7 +53,17 @@ export const Footer = () => {
                 </div>
                 <div>
                   <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Call Us</p>
-                  <a href="tel:9361669314" className="font-bold text-lg hover:text-brand-orange transition-colors">9361669314</a>
+                  <a href="tel:9361669314" className="font-bold text-lg hover:text-brand-orange transition-colors">+91 93616 69314</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 group">
+                <div className="p-3 bg-white/10 rounded-lg group-hover:bg-brand-orange transition-colors">
+                  <Clock size={20} />
+                </div>
+                <div>
+                  <p className="text-xs text-white/60 uppercase tracking-wider mb-1">Working Hours</p>
+                  <p className="font-medium text-white">Mon - Sun: 24 Hours</p>
                 </div>
               </div>
             </div>
@@ -93,15 +102,17 @@ export const Footer = () => {
             <div className="mt-10 p-6 bg-brand-orange rounded-2xl text-center shadow-lg transform hover:-translate-y-1 transition-transform">
               <h4 className="text-xl font-bold mb-2">Ready to Plan?</h4>
               <p className="text-sm text-white/90 mb-4">Let's make your event unforgettable.</p>
-              <StarBorder
-                as={Link}
-                to="/booking"
-                color="#8C0A0A"
-                speed="4s"
-                className="w-full font-bold flex items-center justify-center gap-2"
-              >
-                Book Now <ArrowRight size={18} />
-              </StarBorder>
+              <div className="flex justify-center w-full">
+                <HoverButton
+                  text={
+                    <span className="flex items-center gap-2 font-bold justify-center">
+                      Book Now <ArrowRight size={18} />
+                    </span>
+                  }
+                  onClick={() => window.scrollTo(0, 0)} // Or navigation logic
+                  width="100%"
+                />
+              </div>
             </div>
           </div>
         </div>

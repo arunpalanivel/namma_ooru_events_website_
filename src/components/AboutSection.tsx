@@ -23,7 +23,7 @@ const AboutSection = () => {
                   transition={{ duration: 0.6 }}
                   className="lg:w-1/2 relative"
                >
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                  <div className="relative rounded-full aspect-square overflow-hidden border border-white/10 shadow-2xl max-w-md mx-auto">
                      <img
                         src={aboutImg}
                         alt="Event Management Team"

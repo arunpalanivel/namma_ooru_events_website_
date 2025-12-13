@@ -3,7 +3,7 @@ import AboutSection from '../components/AboutSection';
 import { Services } from '../components/Services';
 import { Products } from '../components/Products';
 
-import ContactForm from '../components/ContactForm';
+
 import { motion } from 'framer-motion';
 
 
@@ -16,12 +16,12 @@ export const Home = () => {
          transition={{ duration: 0.5 }}
       >
          <Hero />
-         <AboutSection />
          <Services />
+         <AboutSection />
          <Products />
 
 
-         <ContactForm />
+
       </motion.div>
    );
 };

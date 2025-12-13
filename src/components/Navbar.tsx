@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, MapPin, Image, Play, Mail, Calendar } from 'lucide-react';
 import logo from '../assets/logo.jpg';
 
-import GradientButton from './GradientButton';
+import HoverButton from './HoverButton';
 
 const Navbar = () => {
    const [isOpen, setIsOpen] = useState(false);
@@ -91,7 +91,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
                {/* Logo */}
                <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-                  <img src={logo} alt="Namma Ooru Events" className="h-10 w-10 rounded-full border border-brand-orange" />
+                  <img src={logo} alt="Namma Ooru Events" className="h-10 w-10 rounded-full border border-white" />
                   <span className="text-white font-bold text-lg hidden sm:block">Namma Ooru Events</span>
                </Link>
 
@@ -156,9 +156,7 @@ const Navbar = () => {
                      </div>
                   </div>
 
-                  <GradientButton onClick={() => navigate('/booking')} className="scale-75 origin-right" btnClassName="!text-sm">
-                     Book Now
-                  </GradientButton>
+                  <HoverButton text="Book Now" onClick={() => navigate('/booking')} className="scale-75 origin-right transform" />
                </div>
 
                {/* Mobile Menu Button */}
@@ -241,9 +239,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="pt-2 flex justify-center">
-                     <GradientButton onClick={() => handleNavigation('/booking')} className="scale-90">
-                        Book Now
-                     </GradientButton>
+                     <HoverButton text="Book Now" onClick={() => handleNavigation('/booking')} className="scale-90 transform" />
                   </div>
                </div>
             </div>

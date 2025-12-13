@@ -2,9 +2,12 @@
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Shield, Trophy, Users, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo.jpg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import HoverButton from '../components/HoverButton';
 
 export const About = () => {
+   const navigate = useNavigate();
+
    return (
       <div className="pt-24 min-h-screen bg-black">
          {/* Hero Section */}
@@ -87,13 +90,17 @@ export const About = () => {
                      </p>
                   </div>
 
-                  <Link
-                     to="/contact"
-                     className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-brand-orange hover:text-white transition-all duration-300 group shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,107,0,0.6)]"
-                  >
-                     READ MORE
-                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="mt-8">
+                     <HoverButton
+                        text={
+                           <span className="flex items-center gap-2">
+                              READ MORE <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                           </span>
+                        }
+                        onClick={() => navigate('/contact')}
+                        width="180px"
+                     />
+                  </div>
                </motion.div>
             </div>
          </section>

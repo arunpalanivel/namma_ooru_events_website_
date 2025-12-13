@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock } from 'lucide-react';
+import HoverButton from '../components/HoverButton';
 
 const Contact = () => {
    return (
@@ -74,8 +75,12 @@ const Contact = () => {
                               <textarea id="textarea" name="textarea" cols={30} rows={5} placeholder="Write your message..." className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors"></textarea>
                            </div>
                         </div>
-                        <div className="text-center">
-                           <button type="submit" className="w-full bg-brand-orange text-white px-6 py-3 font-xl rounded-md sm:mb-0 font-bold hover:bg-orange-600 transition-colors">Send Message</button>
+                        <div className="flex justify-center">
+                           <HoverButton
+                              text="Send Message"
+                              type="submit"
+                              width="100%"
+                           />
                         </div>
                      </form>
                   </div>

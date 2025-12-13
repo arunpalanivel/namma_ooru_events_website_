@@ -4,37 +4,22 @@ import { motion } from 'framer-motion';
 import { ArrowRightCircle } from 'lucide-react';
 import TextType from './TextType';
 
-import GradientButton from './GradientButton';
+import HoverButton from './HoverButton';
+import ExploreButton from './ExploreButton';
 import LogoCarousel from './LogoCarousel';
 import VariableProximity from './VariableProximity';
-import Threads from './Threads';
 import ImageMarquee from './ImageMarquee';
-
-
 import logo from '../assets/logo.jpg';
+
+
 
 
 export const Hero = () => {
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
 
-
-
   return (
     <div id="home" className="bg-black pb-0 relative overflow-hidden min-h-screen">
-
-      {/* Threads Background */}
-      <div className="absolute inset-0 z-0 opacity-50">
-        <Threads
-          color={[1, 1, 1]} // White
-          amplitude={1}
-          distance={0}
-          enableMouseInteraction={true}
-        />
-      </div>
-
-
-
       {/* Full Width Image Marquee */}
       <div className="w-full pt-32 pb-8 relative z-20">
         <ImageMarquee />
@@ -43,9 +28,6 @@ export const Hero = () => {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
 
-
-
-        {/* Welcome Heading */}
         {/* Welcome Heading */}
         <div className="mb-12 flex justify-center">
           <TextType
@@ -102,21 +84,20 @@ export const Hero = () => {
             {/* Buttons Row - Moved here */}
             <div className="flex flex-row items-center justify-start gap-6 w-full">
               {/* Book Now Button */}
-              <GradientButton
-                as="a"
-                href="#contact"
-              >
-                Booknow!!!
-              </GradientButton>
+              <HoverButton
+                text="Booknow!!!"
+                width="170px"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              />
 
-              <GradientButton
-                as="button"
+              <ExploreButton
                 onClick={() => document.getElementById('service')?.scrollIntoView({ behavior: 'smooth' })}
-                btnClassName="flex justify-center gap-2 items-center"
-              >
-                Explore
-                <ArrowRightCircle className="w-6 h-6" />
-              </GradientButton>
+              />
 
             </div>
 
@@ -163,10 +144,10 @@ export const Hero = () => {
 
 
         </div>
-      </div>
+      </div >
 
       {/* Infinite Logo Scroll */}
-      <LogoCarousel />
+      < LogoCarousel />
     </div >
   );
 };

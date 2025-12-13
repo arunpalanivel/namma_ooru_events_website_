@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Calendar, User, Mail, Phone, MessageSquare, Send, MapPin, IndianRupee } from 'lucide-react';
-import StarBorder from '../components/StarBorder';
+import HoverButton from '../components/HoverButton';
 
 export const Booking = () => {
    const [formData, setFormData] = useState({
@@ -211,15 +211,17 @@ export const Booking = () => {
                         </div>
                      </div>
 
-                     <StarBorder
-                        type="submit"
-                        color="#8C0A0A"
-                        speed="4s"
-                        className="w-full font-bold py-4 flex items-center justify-center gap-2 text-lg"
-                     >
-                        <Send size={20} />
-                        SUBMIT INQUIRY
-                     </StarBorder>
+                     <div className="flex justify-center">
+                        <HoverButton
+                           text={
+                              <span className="flex items-center gap-2">
+                                 <Send size={20} /> SUBMIT INQUIRY
+                              </span>
+                           }
+                           type="submit"
+                           width="100%"
+                        />
+                     </div>
 
                   </form>
                </div>
