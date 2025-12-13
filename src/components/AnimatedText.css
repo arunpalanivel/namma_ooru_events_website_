@@ -1,0 +1,32 @@
+.animated-text {
+   color: white;
+   text-decoration: none;
+   /* font-size: 25px; Removed to inherit from parent/Tailwind */
+   border: none;
+   background: none;
+   /* font-weight: 600; Removed to inherit */
+   font-family: 'Poppins', sans-serif;
+   position: relative;
+   display: inline-block;
+   cursor: default;
+   /* Changing from pointer if it's just text, or keep if user wants generic look */
+}
+
+.animated-text::before {
+   margin-left: auto;
+}
+
+.animated-text::after,
+.animated-text::before {
+   content: '';
+   width: 0%;
+   height: 2px;
+   background: #f44336;
+   display: block;
+   transition: 0.5s;
+}
+
+.animated-text:hover::after,
+.animated-text:hover::before {
+   width: 100%;
+}

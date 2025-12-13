@@ -1,0 +1,52 @@
+.heroBtn {
+   width: 10em;
+   position: relative;
+   height: 3.5em;
+   border: 3px ridge #149CEA;
+   outline: none;
+   background-color: transparent;
+   color: white;
+   transition: 1s;
+   border-radius: 0.3em;
+   font-size: 16px;
+   font-weight: bold;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.heroBtn::after {
+   content: "";
+   position: absolute;
+   top: -10px;
+   left: 3%;
+   width: 95%;
+   height: 40%;
+   background-color: black;
+   /* Changed to black to match bg */
+   transition: 0.5s;
+   transform-origin: center;
+}
+
+.heroBtn::before {
+   content: "";
+   transform-origin: center;
+   position: absolute;
+   top: 80%;
+   left: 3%;
+   width: 95%;
+   height: 40%;
+   background-color: black;
+   /* Changed to black to match bg */
+   transition: 0.5s;
+}
+
+.heroBtn:hover::before,
+.heroBtn:hover::after {
+   transform: scale(0)
+}
+
+.heroBtn:hover {
+   box-shadow: inset 0px 0px 25px #1479EA;
+}

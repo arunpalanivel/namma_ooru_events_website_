@@ -1,0 +1,94 @@
+/* ChatBot Custom Button */
+.vk-button {
+   cursor: pointer;
+   border: none;
+   background: #8A2BE2;
+   /* Violet */
+   color: #fff;
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   overflow: hidden;
+   position: relative;
+   display: grid;
+   place-content: center;
+   transition: background 300ms, transform 200ms;
+   font-weight: 600;
+   box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+.vk-button__text {
+   position: absolute;
+   inset: 0;
+   animation: text-rotation 8s linear infinite;
+   pointer-events: none;
+}
+
+.vk-button__text span {
+   position: absolute;
+   transform: rotate(calc(22deg * var(--index)));
+   inset: 7px;
+   font-family: 'Courier New', Courier, monospace;
+   /* Or inherited font */
+   font-size: 10px;
+   text-transform: uppercase;
+   font-weight: 800;
+   letter-spacing: 2px;
+}
+
+.vk-button__circle {
+   position: relative;
+   width: 40px;
+   height: 40px;
+   overflow: hidden;
+   background: #000;
+   color: #8A2BE2;
+   /* Violet */
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 10;
+}
+
+.vk-button__icon {
+   position: absolute;
+   transition: transform 0.3s ease-in-out;
+}
+
+.vk-button__icon--copy {
+   position: absolute;
+   transform: translate(-150%, 150%);
+   transition: transform 0.3s ease-in-out 0.1s;
+}
+
+.vk-button:hover {
+   background: #000;
+   transform: scale(1.05);
+   border: 1px solid #8A2BE2;
+   /* Violet */
+}
+
+.vk-button:hover .vk-button__circle {
+   background: #8A2BE2;
+   /* Violet */
+   color: #000;
+}
+
+.vk-button:hover .vk-button__icon {
+   transform: translate(150%, -150%);
+}
+
+.vk-button:hover .vk-button__icon--copy {
+   transform: translate(0);
+}
+
+@keyframes text-rotation {
+   to {
+      rotate: 360deg;
+   }
+}
+
+.vk-button:active {
+   transform: scale(0.95);
+}
