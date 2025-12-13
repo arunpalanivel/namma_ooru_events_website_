@@ -52,7 +52,7 @@ export const About = () => {
                      {/* Circular Glow */}
                      <div className="absolute inset-0 rounded-full bg-brand-orange/20 blur-3xl transform scale-110"></div>
                      {/* Main Image Container */}
-                     <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-zinc-800 shadow-2xl bg-white flex items-center justify-center p-8 group hover:border-brand-orange/50 transition-colors duration-500">
+                     <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-white bg-white flex items-center justify-center p-8 group hover:border-brand-orange/50 transition-colors duration-500">
                         <img
                            src={logo}
                            alt="Namma Ooru Events Logo"

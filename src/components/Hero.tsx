@@ -61,7 +61,7 @@ export const Hero = () => {
             cursorCharacter="|"
             cursorClassName="text-[#FF9E02]"
             textColors={['#ffffff', '#FF9E02', '#8C0A0A']}
-            className="text-3xl md:text-4xl font-bold font-kaisei"
+            className="text-xl md:text-2xl font-bold font-kaisei"
           />
         </div>
 
@@ -84,7 +84,7 @@ export const Hero = () => {
               </div>
               <div
                 ref={containerRef}
-                className="text-white text-lg leading-relaxed font-sans relative"
+                className="text-white text-base leading-relaxed font-sans relative"
                 style={{ minHeight: '100px' }} // Ensure container has height
               >
                 <VariableProximity
