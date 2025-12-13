@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Mail } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 
 const Contact = () => {
    return (
