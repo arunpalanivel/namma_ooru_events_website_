@@ -1,12 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { CheckCircle2 } from 'lucide-react';
 import djImg from '../assets/dj.jpg';
-import StarBorder from '../components/StarBorder';
 
 export const DjSoundSystems = () => {
-   const navigate = useNavigate();
-
    const features = [
       "Professional DJs & VJs",
       "High-End Sound Systems (JBL, Bose)",
@@ -58,15 +54,7 @@ export const DjSoundSystems = () => {
                         ))}
                      </div>
 
-                     <StarBorder
-                        as="button"
-                        onClick={() => navigate('/#contact')}
-                        color="#8C0A0A"
-                        speed="4s"
-                        className="px-8 py-3 font-bold text-lg flex items-center gap-2"
-                     >
-                        Book DJ & Sound <ArrowRight size={20} />
-                     </StarBorder>
+
                   </div>
 
                   {/* Image/Visual Side */}

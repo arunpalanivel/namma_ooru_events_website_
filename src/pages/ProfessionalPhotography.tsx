@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import StarBorder from '../components/StarBorder';
+
 
 export const ProfessionalPhotography = () => {
    const navigate = useNavigate();
@@ -57,15 +57,12 @@ export const ProfessionalPhotography = () => {
                         ))}
                      </div>
 
-                     <StarBorder
-                        as="button"
+                     <button
                         onClick={() => navigate('/#contact')}
-                        color="#8C0A0A"
-                        speed="4s"
-                        className="px-8 py-3 font-bold text-lg flex items-center gap-2"
+                        className="bg-[#222] text-white px-8 py-3 rounded-md font-bold text-lg uppercase tracking-widest hover:bg-brand-orange transition-colors flex items-center gap-2"
                      >
-                        Book Photography <ArrowRight size={20} />
-                     </StarBorder>
+                        Book Now <ArrowRight size={20} />
+                     </button>
                   </div>
 
                   {/* Image/Visual Side */}

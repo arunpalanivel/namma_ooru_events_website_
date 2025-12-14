@@ -45,7 +45,7 @@ export const Booking = () => {
       <div className="min-h-screen bg-black font-heebo">
          <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="text-center mb-12">
-               <h1 className="text-4xl md:text-5xl font-bold font-kaisei text-white mb-4">Book Your Event</h1>
+               <h1 className="text-4xl md:text-5xl font-bold font-kaisei text-white mb-4">Contact Us</h1>
                <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                   Ready to make memories? Fill out the form below to start planning your perfect event with Namma Ooru Events.
                </p>
@@ -215,7 +215,7 @@ export const Booking = () => {
                         <HoverButton
                            text={
                               <span className="flex items-center gap-2">
-                                 <Send size={20} /> SUBMIT INQUIRY
+                                 <Send size={20} /> Contact
                               </span>
                            }
                            type="submit"

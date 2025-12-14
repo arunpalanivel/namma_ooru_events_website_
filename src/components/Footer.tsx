@@ -1,6 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
-import { Mail, MapPin, Phone, Youtube, MessageCircle, ArrowRight, Instagram, Clock } from 'lucide-react';
+import { Mail, MapPin, Phone, Youtube, MessageCircle, ArrowRight, Instagram, Clock, X } from 'lucide-react';
 import HoverButton from './HoverButton';
 
 export const Footer = () => {
@@ -98,6 +98,9 @@ export const Footer = () => {
                 <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-green-600 hover:scale-110 transition-all">
                   <MessageCircle size={24} />
                 </a>
+                <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-black hover:scale-110 transition-all">
+                  <X size={24} />
+                </a>
               </div>
             </div>
 
@@ -105,11 +108,7 @@ export const Footer = () => {
               <h4 className="text-xl font-bold mb-2">Ready to Plan?</h4>
               <p className="text-sm text-white/90 mb-4">Let's make your event unforgettable.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
-                <HoverButton
-                  text="Contact Us"
-                  onClick={() => navigate('/contact')}
-                  width="100%"
-                />
+
                 <HoverButton
                   text={
                     <span className="flex items-center gap-2 font-bold justify-center">

@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { CheckCircle2 } from 'lucide-react';
 import weddingImg from '../assets/services/wedding_planning.jpg';
 
 import mehendiImg from '../assets/mehendi.jpg';
-import GradientButton from '../components/GradientButton';
 import Stack from '../components/Stack';
 import AnimatedText from '../components/AnimatedText';
 import photo1 from '../assets/wedding/photo1.jpg';
@@ -13,7 +11,6 @@ import photo3 from '../assets/wedding/photo3.jpg';
 import photo4 from '../assets/wedding/photo4.jpg';
 
 export const WeddingPlanning = () => {
-   const navigate = useNavigate();
 
    const features = [
       "CREATIVE DECORATION",
@@ -62,13 +59,7 @@ export const WeddingPlanning = () => {
                         ))}
                      </div>
 
-                     <GradientButton
-                        as="button"
-                        onClick={() => navigate('/#contact')}
-                        btnClassName="px-8 py-3 font-bold text-lg flex items-center gap-2"
-                     >
-                        Plan My Wedding <ArrowRight size={20} />
-                     </GradientButton>
+
                   </div>
 
                   {/* Image/Visual Side */}

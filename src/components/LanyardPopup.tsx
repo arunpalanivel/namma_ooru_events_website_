@@ -4,6 +4,7 @@ import BikeLoader from './BikeLoader';
 import { X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+
 export default function LanyardPopup() {
    const [visible, setVisible] = useState(true);
 

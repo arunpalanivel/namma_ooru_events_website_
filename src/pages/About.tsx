@@ -1,7 +1,8 @@
 
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Shield, Trophy, Users, ArrowRight } from 'lucide-react';
-import logo from '../assets/logo.jpg';
+import aboutImg from '../assets/about_us_logo.jpg';
+import heroImg from '../assets/event_team_hero.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 import HoverButton from '../components/HoverButton';
 
@@ -14,7 +15,7 @@ export const About = () => {
          <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
                <img
-                  src="https://images.unsplash.com/photo-1609151162377-794d081831e5?auto=format&fit=crop&q=80"
+                  src={heroImg}
                   alt="Event Management Team"
                   className="w-full h-full object-cover"
                />
@@ -52,13 +53,13 @@ export const About = () => {
                   className="lg:w-1/2 relative"
                >
                   <div className="relative aspect-square max-w-md mx-auto">
-                     {/* Circular Glow */}
+                     {/* Glow */}
                      <div className="absolute inset-0 rounded-full bg-brand-orange/20 blur-3xl transform scale-110"></div>
                      {/* Main Image Container */}
                      <div className="relative h-full w-full rounded-full overflow-hidden border-4 border-white bg-white flex items-center justify-center p-8 group hover:border-brand-orange/50 transition-colors duration-500">
                         <img
-                           src={logo}
-                           alt="Namma Ooru Events Logo"
+                           src={aboutImg}
+                           alt="Technical Partner"
                            className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
                         />
                      </div>
