@@ -77,7 +77,7 @@ export const Booking = () => {
                                  value={formData.name}
                                  onChange={handleChange}
                                  className="pl-10 block w-full rounded-lg border-gray-700 bg-zinc-800 text-white border focus:bg-zinc-700 focus:border-brand-orange focus:ring-brand-orange transition-colors py-3"
-                                 placeholder="John Doe"
+                                 placeholder="Arun"
                               />
                            </div>
                         </div>
@@ -117,7 +117,7 @@ export const Booking = () => {
                                  value={formData.email}
                                  onChange={handleChange}
                                  className="pl-10 block w-full rounded-lg border-gray-700 bg-zinc-800 text-white border focus:bg-zinc-700 focus:border-brand-orange focus:ring-brand-orange transition-colors py-3"
-                                 placeholder="john@example.com"
+                                 placeholder="saivignesh54@gmail.com"
                               />
                            </div>
                         </div>
@@ -234,15 +234,15 @@ export const Booking = () => {
                      <div className="space-y-4 text-gray-300">
                         <p className="flex items-start gap-3">
                            <MapPin className="text-brand-orange min-w-[20px]" />
-                           <span>123 Event Street, Namma Ooru, Chennai - 600001</span>
+                           <span>16/4 S.S. COMPLEX Railway station road aranthangi 614616</span>
                         </p>
                         <p className="flex items-center gap-3">
                            <Phone className="text-brand-orange" />
-                           <span>+91 98765 43210</span>
+                           <span>+91 93616 69314</span>
                         </p>
                         <p className="flex items-center gap-3">
                            <Mail className="text-brand-orange" />
-                           <span>hello@nammaooruevents.com</span>
+                           <span>nammaooruevents@gmail.com</span>
                         </p>
                      </div>
                   </div>
@@ -253,7 +253,7 @@ export const Booking = () => {
                      <div className="absolute inset-0 bg-zinc-800 flex items-center justify-center">
                         <iframe
                            title="Map"
-                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15545.897364667554!2d80.20901173955078!3d13.069155250000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266874e0c9047%3A0xc0c9d747d890072b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31431.07544917638!2d78.9959604!3d10.1601709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b006764516768b9%3A0xb30e461a720468!2sAranthangi%2C%20Tamil%20Nadu%20614616!5e0!3m2!1sen!2sin!4v1710521400000!5m2!1sen!2sin"
                            className="w-full h-full grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                            loading="lazy"
                            referrerPolicy="no-referrer-when-downgrade"
