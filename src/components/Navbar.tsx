@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, MapPin, Image, Play, Mail, Calendar } from 'lucide-react';
+import { Menu, X, ChevronDown, MapPin, Image, Play } from 'lucide-react';
 import logo from '../assets/logo.jpg';
 
 import HoverButton from './HoverButton';
@@ -16,10 +16,10 @@ const Navbar = () => {
    const navigate = useNavigate();
 
    const locations = [
-      { name: 'Pudukkottai', path: '#contact' },
-      { name: 'Thanjavur', path: '#contact' },
-      { name: 'Tiruchirappalli', path: '#contact' },
-      { name: 'Contact Map', path: '#contact' }
+      { name: 'Pudukkottai', path: '/contact' },
+      { name: 'Thanjavur', path: '/contact' },
+      { name: 'Tiruchirappalli', path: '/contact' },
+      { name: 'Contact Map', path: '/contact' }
    ];
 
    useEffect(() => {

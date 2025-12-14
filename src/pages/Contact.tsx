@@ -71,6 +71,14 @@ const Contact = () => {
                               <input type="email" id="email" autoComplete="email" placeholder="Your email address" className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors" name="email" />
                            </div>
                            <div className="mx-0 mb-1 sm:mb-4">
+                              <label htmlFor="location" className="pb-1 text-xs uppercase tracking-wider text-white"></label>
+                              <input type="text" id="location" placeholder="Location" className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors" name="location" />
+                           </div>
+                           <div className="mx-0 mb-1 sm:mb-4">
+                              <label htmlFor="phone" className="pb-1 text-xs uppercase tracking-wider text-white"></label>
+                              <input type="tel" id="phone" placeholder="Phone Number" className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors" name="phone" />
+                           </div>
+                           <div className="mx-0 mb-1 sm:mb-4">
                               <label htmlFor="textarea" className="pb-1 text-xs uppercase tracking-wider text-white"></label>
                               <textarea id="textarea" name="textarea" cols={30} rows={5} placeholder="Write your message..." className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors"></textarea>
                            </div>
@@ -85,6 +93,20 @@ const Contact = () => {
                      </form>
                   </div>
                </div>
+            </div>
+
+            {/* Google Map */}
+            <div className="mt-16 w-full h-[400px] rounded-xl overflow-hidden border border-white/10">
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31431.07544917638!2d78.9959604!3d10.1601709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b006764516768b9%3A0xb30e461a720468!2sAranthangi%2C%20Tamil%20Nadu%20614616!5e0!3m2!1sen!2sin!4v1710521400000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Map"
+               ></iframe>
             </div>
          </div>
       </section>
