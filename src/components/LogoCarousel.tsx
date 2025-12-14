@@ -1,16 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Twitter, Youtube, Chrome } from 'lucide-react';
-import arcPairLogoOld from '../assets/arc-pair-studio-logo.png'; // Renamed to avoid conflict
+import arcPairLogo from '../assets/arc_pair_studio_new.png';
+
 
 
 const CompanyLogoData = [
+   { Icon: ({ className }: { className?: string }) => <img src={arcPairLogo} alt="Arc Pair Studio" className={className} style={{ height: '40px', width: 'auto', filter: 'invert(1)' }} />, alt: 'Arc Pair Studio' },
    { Icon: Facebook, alt: 'Facebook' },
    { Icon: Instagram, alt: 'Instagram' },
    { Icon: Twitter, alt: 'Twitter' },
    { Icon: Youtube, alt: 'YouTube' },
    { Icon: Chrome, alt: 'Google' },
-   { Icon: ({ className }: { className?: string }) => <img src={arcPairLogoOld} alt="Arc Pair Studio" className={className} style={{ filter: 'invert(1)' }} />, alt: 'Arc Pair Studio' },
 ];
 
 const LogoCarousel = () => {

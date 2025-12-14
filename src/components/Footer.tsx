@@ -1,8 +1,10 @@
 
-import { Mail, MapPin, Phone, Youtube, MessageCircle, ArrowRight, Instagram, Clock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Mail, MapPin, Phone, Youtube, MessageCircle, ArrowRight, Instagram, Clock, X } from 'lucide-react';
 import HoverButton from './HoverButton';
 
 export const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="bg-black text-white pt-20 pb-10 font-heebo relative overflow-hidden">
       {/* Background Pattern */}
@@ -42,7 +44,7 @@ export const Footer = () => {
                     className="font-medium hover:text-brand-orange transition-colors block"
                   >
                     16/4 S.S. COMPLEX<br />
-                    Railway station road aranthangi  614616
+                    Railway station road aranthangi 614616
                   </a>
                 </div>
               </div>
@@ -96,20 +98,24 @@ export const Footer = () => {
                 <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-green-600 hover:scale-110 transition-all">
                   <MessageCircle size={24} />
                 </a>
+                <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-black hover:scale-110 transition-all">
+                  <X size={24} />
+                </a>
               </div>
             </div>
 
             <div className="mt-10 p-6 bg-brand-orange rounded-2xl text-center shadow-lg transform hover:-translate-y-1 transition-transform">
               <h4 className="text-xl font-bold mb-2">Ready to Plan?</h4>
               <p className="text-sm text-white/90 mb-4">Let's make your event unforgettable.</p>
-              <div className="flex justify-center w-full">
+              <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
+
                 <HoverButton
                   text={
                     <span className="flex items-center gap-2 font-bold justify-center">
                       Book Now <ArrowRight size={18} />
                     </span>
                   }
-                  onClick={() => window.scrollTo(0, 0)} // Or navigation logic
+                  onClick={() => navigate('/booking')}
                   width="100%"
                 />
               </div>

@@ -20,6 +20,7 @@ import LightRays from './components/LightRays';
 import ChatBot from './components/ChatBot';
 import LanyardPopup from './components/LanyardPopup';
 
+
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
@@ -72,6 +73,7 @@ function App() {
         <div className="relative z-10 flex flex-col min-h-screen">
           <LanyardPopup />
           <Navbar />
+
           <main className="flex-grow">
             <AnimatedRoutes />
           </main>

@@ -179,7 +179,7 @@ export const AllServices = () => {
                            </p>
 
                            <div className="mt-4 flex items-center gap-2 text-brand-orange text-xs font-bold tracking-widest uppercase">
-                              Book Now <ArrowRight size={14} />
+                              Contact <ArrowRight size={14} />
                            </div>
                         </div>
                      </motion.div>

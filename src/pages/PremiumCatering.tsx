@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import tamilBreakfastImg from '../assets/services/tamil_breakfast.jpg';
+import tamilLunchImg from '../assets/services/tamil_lunch.jpg';
+import tamilEveningImg from '../assets/services/tamil_evening.jpg';
+import tamilNonVegImg from '../assets/services/tamil_non_veg.jpg';
 
 export const PremiumCatering = () => {
    const navigate = useNavigate();
@@ -34,10 +38,10 @@ export const PremiumCatering = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                {[
-                  { title: "MORNING TIFFEN", img: "https://images.unsplash.com/photo-1589301760574-d816287cd688?q=80&w=2070&auto=format&fit=crop" },
-                  { title: "AFTERNOON LUNCH", img: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=2070&auto=format&fit=crop" },
-                  { title: "EVENING DINNER", img: "https://images.unsplash.com/photo-1547496502-ffa22d388946?q=80&w=2073&auto=format&fit=crop" },
-                  { title: "NON VEGETARIAN", img: "https://images.unsplash.com/photo-1606471191009-63994c53433b?q=80&w=927&auto=format&fit=crop" }
+                  { title: "MORNING TIFFEN", img: tamilBreakfastImg },
+                  { title: "AFTERNOON LUNCH", img: tamilLunchImg },
+                  { title: "EVENING DINNER", img: tamilEveningImg },
+                  { title: "NON VEGETARIAN", img: tamilNonVegImg }
                ].map((item, index) => (
                   <div key={index} className="bg-[#F4C466] rounded-xl p-6 flex flex-col items-center justify-between h-[450px] relative overflow-hidden group shadow-lg transition-transform hover:-translate-y-2 duration-300">
 

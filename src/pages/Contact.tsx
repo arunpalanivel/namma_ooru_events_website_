@@ -73,7 +73,7 @@ const Contact = () => {
                            <div className="ml-4 mb-4">
                               <h3 className="mb-2 text-lg font-medium leading-6 text-white font-kaisei">Our Address</h3>
                               <p className="text-slate-400 font-heebo">16/4 S.S. COMPLEX</p>
-                              <p className="text-slate-400 font-heebo">Railway station road, Aranthangi 614616</p>
+                              <p className="text-slate-400 font-heebo">Railway station road aranthangi 614616</p>
                            </div>
                         </li>
                         <li className="flex">
