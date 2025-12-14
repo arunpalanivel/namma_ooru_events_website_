@@ -3,17 +3,10 @@ import invitationImg from '../assets/products/invitation.jpg';
 import photoFrameImg from '../assets/products/photoframe.jpg';
 import videographyImg from '../assets/products/videography.jpg';
 import albumImg from '../assets/products/album.jpg';
-import CircularGallery from './CircularGallery';
 import BounceCards from './BounceCards';
+import ScrollVelocity from './ScrollVelocity';
 
 export const Products = () => {
-  const galleryItems = [
-    { image: photoFrameImg, text: "PHOTO FRAME" },
-    { image: videographyImg, text: "VIDEOGRAPHY" },
-    { image: albumImg, text: "ALBUM DESIGN" },
-    { image: invitationImg, text: "INVITATION" }
-  ];
-
   return (
     <section id="product" className="py-20 bg-gradient-to-b from-black to-zinc-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,6 +31,15 @@ export const Products = () => {
             enableHover={true}
           />
         </div>
+
+      </div>
+
+      <div className="mt-16 w-full overflow-hidden">
+        <ScrollVelocity
+          texts={["LIVE PHOTO FRAME   VIDEOGRAPHY   ALBUM DESIGN   INNOVATION"]}
+          velocity={20}
+          className="text-2xl md:text-4xl font-bold font-ibmMono text-white mx-4"
+        />
       </div>
     </section>
   );
