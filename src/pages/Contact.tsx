@@ -1,6 +1,45 @@
 import { MapPin, Phone, Clock } from 'lucide-react';
 import HoverButton from '../components/HoverButton';
 
+const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/a623wfcvwqm57xbk7veq6b36ijsyatlj"; 
+
+const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // 1. Get Form Data from the DOM
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    // Convert FormData to a JSON object
+    const data = Object.fromEntries(formData.entries());
+    
+    // Add Timestamp (crucial for your spreadsheet)
+    data.Timestamp = new Date().toLocaleString();
+
+    // 2. Prepare for Submission using Fetch API
+    try {
+        const response = await fetch(CONTACT_WEBHOOK_URL, {
+            method: 'POST',
+            // IMPORTANT: Tell Make we are sending JSON data
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data), 
+        });
+
+        // Make typically returns a 200 or 202 status on success
+        if (response.ok || response.status === 200 || response.status === 202) {
+            alert('Message Sent! We will contact you soon.');
+            form.reset(); // Clear the form
+        } else {
+            // Log the status if the submission failed
+            console.error('Submission Failed with status:', response.status);
+            alert('Failed to send inquiry. Please check your network.');
+        }
+
+    } catch (error) {
+        console.error('Network Error:', error);
+        alert('A network error occurred.');
+    }
+};
 const Contact = () => {
    return (
       <section className="bg-black pt-20 pb-12" id="contact">
@@ -60,7 +99,7 @@ const Contact = () => {
                   </div>
                   <div className="card h-fit max-w-6xl p-5 md:p-12 bg-zinc-900/50 backdrop-blur-sm rounded-2xl border border-white/10" id="form">
                      <h2 className="mb-4 text-2xl font-bold text-white font-kaisei">Ready to Get Started?</h2>
-                     <form id="contactForm">
+                     <form id="contactForm" onSubmit={handleSubmit}>
                         <div className="mb-6">
                            <div className="mx-0 mb-1 sm:mb-4">
                               <label htmlFor="name" className="pb-1 text-xs uppercase tracking-wider text-white"></label>
