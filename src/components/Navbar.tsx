@@ -37,7 +37,7 @@ const Navbar = () => {
 
    const navLinks = [
       { name: 'Home', path: '/' },
-      { name: 'Services', path: '#service' },
+      { name: 'Services', path: '/all-services' },
       { name: 'Testimonials', path: '/testimonials' },
       {
          name: 'Gallery',
@@ -47,13 +47,7 @@ const Navbar = () => {
          ]
       },
       { name: 'About', path: '/about' },
-      {
-         name: 'Contact',
-         children: [
-            { name: 'Enquiry', path: '/contact', icon: Mail },
-            { name: 'Booking', path: '/booking', icon: Calendar }
-         ]
-      },
+      { name: 'Contact', path: '/contact' },
    ];
 
    const handleNavigation = (path: string) => {
