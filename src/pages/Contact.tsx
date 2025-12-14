@@ -119,7 +119,7 @@ const Contact = () => {
                            </div>
                            <div className="mx-0 mb-1 sm:mb-4">
                               <label htmlFor="textarea" className="pb-1 text-xs uppercase tracking-wider text-white"></label>
-                              <textarea id="textarea" name="textarea" cols={30} rows={5} placeholder="Write your message..." className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors"></textarea>
+                              <textarea id="textarea" name="message" cols={30} rows={5} placeholder="Write your message..." className="mb-2 w-full rounded-md border border-gray-700 bg-black/50 py-2 pl-2 pr-4 shadow-md text-gray-300 sm:mb-0 focus:border-brand-orange focus:ring-brand-orange outline-none transition-colors"></textarea>
                            </div>
                         </div>
                         <div className="flex justify-center">
