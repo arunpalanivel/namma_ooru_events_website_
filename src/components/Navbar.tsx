@@ -150,6 +150,7 @@ const Navbar = () => {
                      </div>
                   </div>
 
+
                   <HoverButton text="Book Now" onClick={() => navigate('/booking')} className="scale-75 origin-right transform" />
                </div>
 

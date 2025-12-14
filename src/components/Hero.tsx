@@ -85,14 +85,9 @@ export const Hero = () => {
             <div className="flex flex-row items-center justify-start gap-6 w-full">
               {/* Book Now Button */}
               <HoverButton
-                text="Booknow!!!"
+                text="Book Now"
                 width="170px"
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+                onClick={() => navigate('/booking')}
               />
 
               <ExploreButton
