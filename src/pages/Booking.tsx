@@ -1,22 +1,27 @@
-
 import { useState } from 'react';
-import { Calendar, User, Mail, Phone, MessageSquare, Send, MapPin, IndianRupee } from 'lucide-react';
+import { Calendar, User, Mail, Phone, MessageSquare, Send, MapPin, IndianRupee, Users } from 'lucide-react';
 import HoverButton from '../components/HoverButton';
 
+// The webhook URL for sending form data
+const BOOKING_WEBHOOK_URL = "https://hook.eu1.make.com/tp661ttuloow1ankb7jx3nm1m9wwixd4";
+
+
 export const Booking = () => {
+   // Added 'Users' icon import for guest count input
    const [formData, setFormData] = useState({
       name: '',
       email: '',
       phone: '',
-      eventType: '',
+      eventType: '', // <-- MISSING INPUT ADDED
       date: '',
-      guestCount: '',
+      guestCount: '', // <-- MISSING INPUT ADDED
       location: '',
       budget: '',
       message: ''
    });
 
    const [wordCount, setWordCount] = useState(0);
+   const [isLoading, setIsLoading] = useState(false); // <-- NEW: for managing submission state
 
    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
       const { name, value } = e.target;
@@ -35,11 +40,40 @@ export const Booking = () => {
       }
    };
 
-   const handleSubmit = (e: React.FormEvent) => {
+   // <-- CRITICAL FIX: Implementation of the async form submission -->
+   const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-      console.log('Booking Request:', formData);
-      alert('Thank you for your inquiry! We will contact you shortly.');
+      setIsLoading(true); // Start loading
+
+      try {
+         const response = await fetch(BOOKING_WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+         });
+
+         if (response.ok) {
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            // Clear the form after successful submission
+            setFormData({
+               name: '', email: '', phone: '', eventType: '', date: '',
+               guestCount: '', location: '', budget: '', message: ''
+            });
+            setWordCount(0);
+         } else {
+            alert('Submission failed. Please try again or contact us directly.');
+            console.error('Webhook failed:', response.statusText);
+         }
+      } catch (error) {
+         alert('An error occurred during submission. Please check your connection.');
+         console.error('Network Error:', error);
+      } finally {
+         setIsLoading(false); // Stop loading regardless of success/failure
+      }
    };
+   // <-- END OF CRITICAL FIX -->
 
    return (
       <div className="min-h-screen bg-black font-heebo">
@@ -141,6 +175,32 @@ export const Booking = () => {
                               />
                            </div>
                         </div>
+                        
+                        {/* 🌟 NEW INPUT: Event Type (was missing) 🌟 */}
+                        <div className="space-y-2">
+                           <label htmlFor="eventType" className="block text-sm font-bold text-gray-300">Type of Event</label>
+                           <div className="relative">
+                              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                 <Calendar className="text-gray-400" size={18} />
+                              </div>
+                              <select
+                                 id="eventType"
+                                 name="eventType"
+                                 required
+                                 value={formData.eventType}
+                                 onChange={handleChange}
+                                 className="pl-10 block w-full rounded-lg border-gray-700 bg-zinc-800 text-white border focus:bg-zinc-700 focus:border-brand-orange focus:ring-brand-orange transition-colors py-3 appearance-none"
+                              >
+                                 <option value="">Select Event Type</option>
+                                 <option value="Wedding">Wedding / Sangeet / Reception</option>
+                                 <option value="Birthday">Birthday / Anniversary</option>
+                                 <option value="Corporate">Corporate Event / Meeting</option>
+                                 <option value="Festival">Festival / Cultural Event</option>
+                                 <option value="Other">Other</option>
+                              </select>
+                           </div>
+                        </div>
+                        {/* 🌟 END NEW INPUT 🌟 */}
 
                         {/* Date */}
                         <div className="space-y-2">
@@ -160,6 +220,29 @@ export const Booking = () => {
                               />
                            </div>
                         </div>
+
+                        {/* 🌟 NEW INPUT: Guest Count (was missing) 🌟 */}
+                        <div className="space-y-2">
+                           <label htmlFor="guestCount" className="block text-sm font-bold text-gray-300">Number of Guests</label>
+                           <div className="relative">
+                              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                 <Users className="text-gray-400" size={18} />
+                              </div>
+                              <input
+                                 type="number" // Use type="number" for correct mobile keyboard and validation
+                                 id="guestCount"
+                                 name="guestCount"
+                                 required
+                                 value={formData.guestCount}
+                                 onChange={handleChange}
+                                 className="pl-10 block w-full rounded-lg border-gray-700 bg-zinc-800 text-white border focus:bg-zinc-700 focus:border-brand-orange focus:ring-brand-orange transition-colors py-3"
+                                 placeholder="e.g., 150"
+                                 min="1"
+                              />
+                           </div>
+                        </div>
+                        {/* 🌟 END NEW INPUT 🌟 */}
+
 
                         {/* Budget */}
                         <div className="space-y-2">
@@ -215,11 +298,12 @@ export const Booking = () => {
                         <HoverButton
                            text={
                               <span className="flex items-center gap-2">
-                                 <Send size={20} /> Contact
+                                 <Send size={20} /> {isLoading ? 'Sending...' : 'Contact'}
                               </span>
                            }
                            type="submit"
                            width="100%"
+                           disabled={isLoading} // <-- NEW: Disable button while loading
                         />
                      </div>
 
