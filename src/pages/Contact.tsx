@@ -1,7 +1,7 @@
 import { MapPin, Phone, Clock } from 'lucide-react';
 import HoverButton from '../components/HoverButton';
 
-const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/a623wfcvwqm57xbk7veq6b36ijsyatlj"; 
+const CONTACT_WEBHOOK_URL = "https://hook.eu1.make.com/qs63otaoyfzo9fl22r7rlxtcdcxohwwd"; 
 
 const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
